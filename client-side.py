@@ -1,7 +1,7 @@
 import socket
 
-HOST = 'localhost' # server IP address
-PORT = 12345 # server port number
+HOST = '192.168.56.101' # server IP address
+PORT = 22222 # server port number
 BUFFER_SIZE = 4096 # buffer size for file transfer
 
 def upload_file(filename):
@@ -45,3 +45,5 @@ def main():
             break
         else:
             print('Invalid choice')
+
+main()

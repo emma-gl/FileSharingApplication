@@ -1,7 +1,7 @@
 import socket
 
 HOST = '192.168.56.101' # server IP address
-PORT = 2222 # server port number
+PORT = 22222 # server port number
 BUFFER_SIZE = 4096 # buffer size for file transfer
 
 def handle_request(conn):

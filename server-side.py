@@ -5,10 +5,14 @@ PORT = 22222 # server port number
 BUFFER_SIZE = 4096 # buffer size for file transfer
 
 def handle_request(conn):
+    '''
+    reads in whether the user wants to upload or download a file and responds accordingly
+    '''
     request = conn.recv(BUFFER_SIZE).decode('utf-8')
     request_parts = request.split()
     if request_parts[0] == 'UPLOAD':
         filename = request_parts[1]
+        #writes contents sent from client to new file
         with open(filename, 'wb') as f:
             while True:
                 data = conn.recv(BUFFER_SIZE)
@@ -18,6 +22,7 @@ def handle_request(conn):
         print(f'{filename} uploaded')
     elif request_parts[0] == 'DOWNLOAD':
         filename = request_parts[1]
+        #reads in content of file and sents to client
         with open(filename, 'rb') as f:
             while True:
                 data = f.read(BUFFER_SIZE)
@@ -28,6 +33,9 @@ def handle_request(conn):
     conn.close()
 
 def main():
+    '''
+    initiates socket connection and waits for a response from client
+    '''
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
         s.listen()

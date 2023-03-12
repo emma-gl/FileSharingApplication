@@ -5,6 +5,9 @@ PORT = 22222 # server port number
 BUFFER_SIZE = 4096 # buffer size for file transfer
 
 def upload_file(filename):
+    '''
+    connects to server and sends contents of file to server
+    '''
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))
         s.sendall(f'UPLOAD {filename}'.encode('utf-8'))
@@ -17,6 +20,10 @@ def upload_file(filename):
         print(f'{filename} uploaded')
 
 def download_file(filename):
+    '''
+    connects to server and reads in contents of file from server to append 
+    to file
+    '''
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))
         s.sendall(f'DOWNLOAD {filename}'.encode('utf-8'))
@@ -29,6 +36,10 @@ def download_file(filename):
         print(f'{filename} downloaded')
 
 def main():
+    '''
+    asks user which action they would like to perform and calls the
+    designated function accordingly
+    '''
     while True:
         print('Choose an option:')
         print('1. Upload file')

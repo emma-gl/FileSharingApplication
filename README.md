@@ -1,4 +1,4 @@
-# FileSharing Application Overview
+# File Sharing Application Overview
 
 The following project follows a basic client-server model which performs as file sharing application that allows clients to upload and download files to/from a server.
 

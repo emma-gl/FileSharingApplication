@@ -10,7 +10,7 @@ Starting the server:
 2. Navigate to the directory containing the server.py file.
 3. Run the following command to start the server:
 
-        python server.py
+        python server-side.py
 
 The server should now be running and waiting for connections from clients!
 
@@ -20,7 +20,7 @@ Starting the client:
 2. Navigate to the directory containing the client.py file.
 3. Run the following command to start the client:
 
-        python client.py
+        python client-side.py
 
 The client should now be running and waiting for user input!
 
@@ -46,7 +46,7 @@ To exit the client, type exit and press Enter.
 My purpose for writing this software was to provide a way to transfer files between machines without the use of internet or a USB.
 
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.loom.com/share/70a261f1a55e4b7f97fa10f030849ed4)
 
 # Network Communication
 
@@ -60,7 +60,7 @@ The program uses the TCP protocol for reliable data transmission. This is becaus
 <br><br>
 Port numbers:
 
-The server listens for incoming connections on a specific port number, which is set to 9999 in the program. This port number can be changed if needed.
+The server listens for incoming connections on a specific port number, which is set to 2222 in the program. This port number can be changed if needed.
 <br><br>
 Message Format:
 
